@@ -6,7 +6,8 @@ from base_math import (natural_numbers,
                        square_numbers,
                        prime_numbers,
                        is_prime,
-                       next_prime)
+                       next_prime,
+                       triangular_numbers)
 
 
 def test_should_0_1_2_3_4_in_natural_numbers():
@@ -41,6 +42,14 @@ def test_should_1_4_9_16_25_in_square_numbers():
     assert result == expected
 
 
+def test_should_1_3_6_10_15_in_triangular_numbers():
+    expected = [1, 3, 6, 10, 15]
+
+    result = list(triangular_numbers(5))
+
+    assert result == expected
+
+
 def test_should_2_3_5_7_11_in_prime_numbers():
     expected = [2, 3, 5, 7, 11]
 
@@ -54,11 +63,11 @@ def test_should_next_prime_of_x_equal_to_y(x, y):
     assert next_prime(x) == y
 
 
-@pytest.mark.parametrize('number', [1, 4, 6, 8, 9])
-def test_should_not_is_prime(number):
-    assert not is_prime(number)
+@pytest.mark.parametrize('x', [1, 4, 6, 8, 9])
+def test_should_x_not_is_prime(x):
+    assert not is_prime(x)
 
 
-@pytest.mark.parametrize('number', [2, 3, 5, 7, 11])
-def test_should_11_is_prime(number):
-    assert is_prime(number)
+@pytest.mark.parametrize('x', [2, 3, 5, 7, 11])
+def test_should_x_is_prime(x):
+    assert is_prime(x)

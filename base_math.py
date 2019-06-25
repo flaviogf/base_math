@@ -8,14 +8,14 @@ def pair_numbers(quantity):
         yield it
 
 
-def odd_numbers(stop):
-    for it in range(1, stop * 2, 2):
+def odd_numbers(quantity):
+    for it in range(1, quantity * 2, 2):
         yield it
 
 
 def square_numbers(quantity):
     for it in range(1, quantity + 1):
-        yield (1 * it) * (1 * it)
+        yield it ** 2
 
 
 def prime_numbers(quantity):
@@ -30,6 +30,11 @@ def prime_numbers(quantity):
 
     for it in primes:
         yield it
+
+
+def triangular_numbers(quantity):
+    for it in range(1, quantity + 1):
+        yield sum(range(1, it + 1))
 
 
 def next_prime(n):
