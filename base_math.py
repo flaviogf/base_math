@@ -37,6 +37,11 @@ def triangular_numbers(quantity):
         yield sum(range(1, it + 1))
 
 
+def integers_number(quantity):
+    for it in range(-quantity, quantity + 1):
+        yield it
+
+
 def next_prime(n):
     return n if is_prime(n) else next_prime(n + 1)
 
