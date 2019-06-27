@@ -1,3 +1,6 @@
+from math import ceil, floor
+
+
 def natural_numbers(quantity):
     for it in range(quantity):
         yield it
@@ -49,3 +52,7 @@ def next_prime(n):
 def is_prime(n):
     dividers_of_n = [it for it in range(1, n + 1) if n % it == 0]
     return len(dividers_of_n) == 2
+
+
+def number_of_integers_in_range(start, stop):
+    return len({it for it in range(round(start), round(stop))})

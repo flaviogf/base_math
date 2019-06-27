@@ -1,4 +1,5 @@
 import pytest
+from math import sqrt
 
 from base_math import (natural_numbers,
                        pair_numbers,
@@ -8,7 +9,8 @@ from base_math import (natural_numbers,
                        is_prime,
                        next_prime,
                        triangular_numbers,
-                       integers_number)
+                       integers_number,
+                       number_of_integers_in_range)
 
 
 def test_should_0_1_2_3_4_in_natural_numbers():
@@ -80,3 +82,11 @@ def test_should_x_not_is_prime(x):
 @pytest.mark.parametrize('x', [2, 3, 5, 7, 11])
 def test_should_x_is_prime(x):
     assert is_prime(x)
+
+
+def test_should_number_of_integers_in_range_minus_sqrt_10_and_sqrt15():
+    expected = 7
+
+    result = number_of_integers_in_range(-sqrt(10), sqrt(15))
+
+    assert result == expected
